@@ -1,0 +1,21 @@
+{% extends 'HOME/base.html' %}
+
+{% block content %}
+
+    <div>
+        {% if user == post.author %}
+            <a href="{% url 'post_update_view' post.id %}">Update</a>
+            <a href="{% url 'post_delete_view' post.id %}">Delete</a>
+        {% endif %}
+        
+        <br>
+        <a href="{% url 'profile_view' post.author.username %}" >Author: {{ post.author.username }}</a>
+        <br>
+        <a href="{% url 'post_detail_view' post.id %}" >Title: {{ post.title }}</a>
+        <br>
+        <a href="#" >Content: {{ post.content }}</a>
+        <br>
+        <a href="#" >Date Posted: {{ post.date_posted }}</a>
+        <br>
+    </div>
+{% endblock content %}

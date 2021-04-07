@@ -1,0 +1,15 @@
+{% extends 'HOME/base.html' %}
+
+{% block content %}
+    <div>
+        <form method='POST'>
+            {% csrf_token %}
+            <legend>Log In</legend>
+            {{form}}
+            <button type="submit">Login</button>
+        </form>>
+
+        <a>Need an account? <a href="{% url 'register_view' %}">Sign Up</a> </a>
+
+    </div>
+{% endblock content %}
